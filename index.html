@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Digital Clock</title>
+  </head>
+  <body>
+    <div class="clock"></div>
+    <script>
+      const clock = document.querySelector(".clock");
+
+      const timer = () => {
+        let date = new Date();
+        let hour = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+
+        hour < 10 ? (hour = `0${hour}`) : hour;
+        minutes < 10 ? (minutes = `0${minutes}`) : minutes;
+        seconds < 10 ? (seconds = `0${seconds}`) : seconds;
+        clock.textContent = `${hour} : ${minutes} : ${seconds}`;
+      };
+      setInterval(timer, 1000);
+    </script>
+  </body>
+</html>
